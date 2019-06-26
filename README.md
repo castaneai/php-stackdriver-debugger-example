@@ -9,9 +9,10 @@ docker-compose run php composer install
 curl http://localhost:8080
 ```
 
-## Start batch daemon
+## Start cloud debugger daemon
 
 ```bash
 docker-compose exec php ash
-$ vendor/bin/google-cloud-batch daemon
+$ vendor/bin/google-cloud-debugger -s /src
 ```
+
