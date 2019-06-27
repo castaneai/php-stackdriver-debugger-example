@@ -2,12 +2,10 @@
 require __DIR__.'/vendor/autoload.php';
 
 use Google\Cloud\Debugger\Agent;
-use Google\Cloud\Debugger\DebuggerClient;
+use Google\Cloud\Debugger\BreakpointStorage\FileBreakpointStorage;
 
-$agent = new Agent(['sourceRoot' => realpath('/src')]);
-
-$debugger = new DebuggerClient();
-$debuggee = $debugger->debuggee('testtesttest');
-$debuggee->register();
+$agent = new Agent([
+    'storage' => new FileBreakpointStorage(),
+]);
 
 echo 'hello, world';

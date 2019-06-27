@@ -1,6 +1,6 @@
-# php-fpm + stackdriver debugger example
+# (WIP) php-fpm + Stackdriver Debugger example
 
-- `GOOGLE_APPLICATIONS_CREDENTIALS`: service account key which can access Stackdriver Debugger
+- `GOOGLE_APPLICATIONS_CREDENTIALS`: GCP service account key which has **Stackdriver Debugger Agent** role. 
 
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS=/path/to/key.json
@@ -13,6 +13,6 @@ curl http://localhost:8080
 
 ```bash
 docker-compose exec php ash
-$ vendor/bin/google-cloud-debugger -s /src
+$ vendor/bin/google-cloud-debugger -c daemonConfig.php
 ```
 
